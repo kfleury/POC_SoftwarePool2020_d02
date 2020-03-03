@@ -30,13 +30,15 @@ function doOp(nb1, ope, nb2, cb) {
 
 function func(res, err) {
     if (res === Infinity)
-        console.log("Pas par 0");
+        console.error("Pas par 0");
+    else if (isNaN(res))
+        console.error("Pas un nombre");
     else
         console.log(res);
 }
 
 function main() {
-    doOp(10, '/', 0, func);
+    doOp('a', '/', 0, func);
 }
 
 main();
